@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&family=Roboto+Condensed:wght@300&display=swap');
+*{
+    padding: 0px;
+    margin: 0px;
+    
+}
+.header-color{
+    background-color:#93c7ba;
+}
+.offers{
+    font-size: 25px;
+    font-family: 'Dancing Script', cursive;
+    color: whitesmoke;
+    font-weight: bolder;
+
+}
+.navbar-style{
+    display: flex;
+    justify-content: space-between;
+}
+.dropDown{
+    font-size: 200px;
+}

@@ -1,0 +1,15 @@
+*{
+    margin :0px;
+    padding :0px;
+}
+.boxBorder{
+    border: none;
+    width: fit-content;
+}
+.Button-style{
+
+
+    color: whitesmoke;
+    font-size: 20px;
+}
+

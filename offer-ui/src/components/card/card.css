@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&family=Raleway:wght@200&family=Roboto+Condensed:wght@300&display=swap');
+*{
+    padding :0px;
+    margin:0;
+}
+.border-card{
+    border:1px solid #93c7ba;
+    box-shadow:3px 4px 5px  #93c7ba;
+    width:80%;
+    padding:2px;
+}
+.card-style{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.div-line{
+    width: 95%;
+    height: 2px;
+    margin: 1% 0% 6% 0%;
+    background-color: #c7ad9c;
+}
+.image-style{
+    width: 90%;
+    height:210px;
+    border-image: 1 solid #c7ad9c;
+
+
+}
+.product{
+    font-weight: 700;
+    font-size: 23px;
+}
+.font{   
+      font-family: 'Raleway', sans-serif;
+}
+.information-style{
+    padding:0%  8%;
+    display: flex;
+    flex-direction: column;
+    font-weight: 900;
+    align-items: flex-start;
+}
+.container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+}
+.category{ font-weight: 900;}
+.price{
+    font-weight: 900;
+}
+.discount{
+    font-size: 15px;
+    color: whitesmoke;
+    margin-left: 4%;
+    background-color: rgb(189, 5, 5);
+    border-radius: 1em;
+    width: 20%;
+    height: 10%;
+    align-content: center;
+}
+.choices-container{
+    display: flex;
+    padding-top:4%;
+    justify-content: space-between;
+}

@@ -1,0 +1,11 @@
+*{
+    margin :0px;
+    padding : 0px;
+}
+.cardContaoner-style{
+    display: flex;
+    justify-content: center;
+    padding-right: 0px;
+    align-items: center;
+    
+}

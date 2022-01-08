@@ -20,6 +20,7 @@ function addToCart(info){
 export default function MediaCard({info}) {
   const [shoppingCart,setShoppingCart] = useState([]);
  
+  
   return (
     <Card sx={{ maxWidth: 345 }} className = "border-card">
       <CardContent className="card-style">

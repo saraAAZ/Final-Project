@@ -1,22 +1,24 @@
-import   React,{useEffect,useState}  from 'react';
+import   React,{useEffect,useState,useContext}  from 'react';
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import CardContainer from '../../components/cardContainer/CardContainer.jsx'
-
-export default function BasicSelect({cate, products}) {
-    const [a, setAr] = useState('');
+import {FilterContext} from '../../utils/filterContext';
+export default function BasicSelect({cate}) {
+   const context = useContext(FilterContext);
+  const [a, setAr] = useState('');
   const [age, setAge] = useState('');
 
 
-  console.log({products});
+  
 //   const [arr, setArrr] =React.useState('');
   const handleChange = (event) => {
     //   setAge(event.target.value);
       setAr(event.target.value);
       console.log(a);
+      context.cateFilter(event)
     //   cate.data.map(item=>item.attributes.categoryName === event.target.value ?
     //      setArrr(cate.data):console.log("false") );
     // setArrr(" Sa");

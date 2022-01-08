@@ -1,6 +1,6 @@
 import './header.css';
 import React,{useEffect,useState} from 'react';
-import axios from 'axios';
+
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -9,7 +9,6 @@ import Typography from '@mui/material/Typography';
 import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
-import AccountCircle from '@mui/icons-material/AccountCircle';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import MoreIcon from '@mui/icons-material/MoreVert';
 
@@ -23,19 +22,8 @@ import MoreIcon from '@mui/icons-material/MoreVert';
   const menuId = 'primary-search-account-menu';
 
 
-  useEffect(() => {
-    async function fetchCategories(){
-      try{
-          const res = await axios.get("https://apimena.herokuapp.com/api/categories");
-          setCategory(res.data);
-      }catch(ERROR){
-        console.error(ERROR);
-      }  
-      
-  }
-  fetchCategories();
-  },[]);
-   console.log(category);  
+ 
+  
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -117,7 +105,7 @@ import MoreIcon from '@mui/icons-material/MoreVert';
           aria-haspopup="true"
           color="inherit"
         >
-          <AccountCircle />
+          
         </IconButton>
         <p>Profile</p>
       </MenuItem>
@@ -159,7 +147,7 @@ import MoreIcon from '@mui/icons-material/MoreVert';
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
-              <AccountCircle />
+              
             </IconButton>
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>

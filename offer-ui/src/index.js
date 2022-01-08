@@ -3,10 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import {ProductProvider} from './utils/ProductContext';
+import {FilterProvider} from './utils/filterContext';
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+   <ProductProvider>
+    <FilterProvider>
+       <App />
+     </FilterProvider>
+    </ProductProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

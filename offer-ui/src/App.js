@@ -11,7 +11,6 @@ function App() {
     <Router>
     <Header/>
           <Routes path="/" exact element={<MainPage/>} >
-           <Route/>
            <Route path="/product" exact element={<Home/>}/>
            <Route path='*' element = {<Navigate to='/'/>}/>
           </Routes>

@@ -10,6 +10,7 @@ const initialState = {
     
     
   }
+
 export const ProductContext = React.createContext();
 export function ProductProvider(props) {
     const [state, dispatch] = useReducer(reducer, initialState);
@@ -20,7 +21,6 @@ export function ProductProvider(props) {
            
             const response = await fetch("https://apimena.herokuapp.com/api/products?populate=*")
             const data= await response.json()
-            console.log(data)
             dispatch({type:"GET_PRODUCT_SUCCESS",payload:data})
             }
             catch(erroe)
@@ -36,7 +36,7 @@ export function ProductProvider(props) {
            
             const response = await fetch("https://apimena.herokuapp.com/api/categories")
             const data= await response.json()
-            console.log(data)
+    
             dispatch({type:"GET_category_SUCCESS",payload:data})
             }
             catch(erroe)

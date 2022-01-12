@@ -7,6 +7,7 @@ const initalState = {
    sort:'price-lowest',
    listgrid:true,
    filter:{
+     search:'all',
        text:'',
        category:'all',
        store:"all",
@@ -52,6 +53,10 @@ export function FilterProvider(props)
    const listView =() =>{
      dispatch({type:"SET_LISTVIEW"})
    }
+   const searchFilter=(e)=>{
+    const value = e.target.value;
+    dispatch({type:"search_f",payload:value})
+   }
    const updatesFilter = (e) =>
    {
      let name = e.target.name;
@@ -66,6 +71,12 @@ export function FilterProvider(props)
        value = e.target.checked
 
      }
+     if(name==='search')
+     {
+      value = e.target.textContent
+  
+     }
+
      dispatch({type :"UPDATE_FILTERS" , payload:{name,value}})
    }
    const ClearFilter =()=>{
@@ -86,7 +97,8 @@ export function FilterProvider(props)
             listView,
             ClearFilter,
             cateFilter,
-            locFilter
+            locFilter,
+            searchFilter
         
                     }}
         >

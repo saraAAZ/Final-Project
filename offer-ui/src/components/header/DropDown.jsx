@@ -4,26 +4,29 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import CardContainer from '../../components/cardContainer/CardContainer.jsx'
 import {FilterContext} from '../../utils/filterContext';
+import { makeStyles } from '@material-ui/core/styles';
+const useStyles = makeStyles({
+  dropdown: {
+    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+    border: 0,
+    borderRadius: 3,
+    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+    color: 'white',
+    height: 48,
+    padding: '0 30px',
+  },
+});
 export default function BasicSelect({cate}) {
+  const classes = useStyles();  
    const context = useContext(FilterContext);
   const [a, setAr] = useState('');
   const [age, setAge] = useState('');
-
-
-  
-//   const [arr, setArrr] =React.useState('');
   const handleChange = (event) => {
-    //   setAge(event.target.value);
+
       setAr(event.target.value);
       console.log(a);
       context.cateFilter(event)
-    //   cate.data.map(item=>item.attributes.categoryName === event.target.value ?
-    //      setArrr(cate.data):console.log("false") );
-    // setArrr(" Sa");
-    //   console.log(arr);
-    //   return<CardContainer products={arr}/>
   };
   return (
     <Box sx={{ minWidth: 120 }}>

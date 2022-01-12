@@ -1,27 +1,32 @@
-import   React,{useEffect,useState}  from 'react';
+import   React,{useEffect,useState,useContext}  from 'react';
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import CardContainer from '../../components/cardContainer/CardContainer.jsx'
-
-export default function BasicSelect({cate, products}) {
-    const [a, setAr] = useState('');
+import {FilterContext} from '../../utils/filterContext';
+import { makeStyles } from '@material-ui/core/styles';
+const useStyles = makeStyles({
+  dropdown: {
+    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+    border: 0,
+    borderRadius: 3,
+    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+    color: 'white',
+    height: 48,
+    padding: '0 30px',
+  },
+});
+export default function BasicSelect({cate}) {
+  const classes = useStyles();  
+   const context = useContext(FilterContext);
+  const [a, setAr] = useState('');
   const [age, setAge] = useState('');
-
-
-  console.log({products});
-//   const [arr, setArrr] =React.useState('');
   const handleChange = (event) => {
-    //   setAge(event.target.value);
+
       setAr(event.target.value);
       console.log(a);
-    //   cate.data.map(item=>item.attributes.categoryName === event.target.value ?
-    //      setArrr(cate.data):console.log("false") );
-    // setArrr(" Sa");
-    //   console.log(arr);
-    //   return<CardContainer products={arr}/>
+      context.cateFilter(event)
   };
   return (
     <Box sx={{ minWidth: 120 }}>

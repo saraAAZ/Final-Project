@@ -6,6 +6,24 @@ import axios from "axios";
 
 
       
+const images = [
+  {
+    imgPath:
+      'https://palsawa.com/thumb/660x400/uploads/images/qbpVH.jpg',
+  },
+  {
+    imgPath:
+      'https://th.bing.com/th/id/R.bdf1d33e03a40964ceb0250993de5287?rik=FxbYl2ImqDfshw&pid=ImgRaw&r=0',
+  },
+  {
+    imgPath:
+      'https://th.bing.com/th/id/OIP.erAIuom_5o_DjF3oYRdbXQHaHa?pid=ImgDet&rs=1',
+  },
+  {
+    imgPath:
+      'https://th.bing.com/th/id/OIP.72vwzgwIXmDf_EKdQbYjtgHaHa?pid=ImgDet&rs=1',
+  },
+];
 
 
 const Container = styled.div`
@@ -89,20 +107,9 @@ const Slider = () => {
     if (direction === "left") {
       setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2);
     } else {
-      setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
+      setSlideIndex(slideIndex < 3 ? slideIndex + 1 : 0);
     }
   };
-
-   const [posts, setPosts] = useState([])
-        useEffect(() => {
-            axios.get("https://apimena.herokuapp.com/api/products")
-            .then(res => {
-                setPosts(res.data.data)
-                        })
-                .catch(err => {
-                        console.log(err);
-                            })
-        }, [])
 
   return (
     <Container>
@@ -110,16 +117,11 @@ const Slider = () => {
         <ArrowLeftOutlined />
       </Arrow>
       <Wrapper slideIndex={slideIndex}>
-        {posts.map((item) => (
+        {images.map((item) => (
           <Slide  key={item.id}>
             <ImgContainer>
-              <Image src={item.attributes.Image} />
+              <Image  src={item.imgPath}/>
             </ImgContainer>
-            <InfoContainer>
-              <Title>{item.attributes.name}</Title>
-              
-              <Button>SHOW NOW</Button>
-            </InfoContainer>
           </Slide>
         ))}
       </Wrapper>

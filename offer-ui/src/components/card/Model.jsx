@@ -25,7 +25,8 @@ export default function BasicModal({info}) {
   let pri =totalPrice/ info.attributes.groupQuantity ;
   const [open, setOpen] = React.useState(false);
   const [diable, setable] = React.useState(false);
-  const [disable] = React.useState(false);
+  const [disable,setDis] = React.useState("");
+  const [able] = React.useState(true);
   const [groupPrice, setGroupPrice] = React.useState(totalPrice);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -53,13 +54,17 @@ function decreace () {
 
     }       
 }
-// info.attributes.groupQuantity>1 && info.attributes.groupPrice  ?
-//     setdisable(false):setdisable(true);
+function abb(){
+  if(info.attributes.groupQuantity <=1){
+  return true;
+  }else
+  return false;
+ }
 
-
+console.log(info.attributes.groupQuantity);
   return (
     <div>
-      <Button onClick={handleOpen}  size="small" disabled={disable}  ><GroupsIcon style={{ color: '#c7ad9c' }}/></Button>
+      <Button onClick={handleOpen}  size="small" disabled ={abb()}  ><GroupsIcon style={{ color: '#c7ad9c' }}/></Button>
       <Modal
         open={open}
         onClose={handleClose}
@@ -75,8 +80,7 @@ function decreace () {
            <span>{amount}</span>
            <button onClick={()=>{decreace()}}>-</button> 
           </Typography>
-          <div>
-           
+          <div> 
            <span> Total Price : {groupPrice}$</span>
         </div>
         </Box>

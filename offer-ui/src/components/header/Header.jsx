@@ -8,8 +8,10 @@ import SearchI from '../cardContainer/search';
 import LocationDrop from '../cardContainer/LocationDropDown';
 import React,{useContext} from 'react';
 import {ProductContext} from '../../utils/ProductContext';
-const useStyles = makeStyles({
-  head: {
+const useStyles = makeStyles(
+  
+  {
+head: {
     display:'flex',
     justifyContent: "space-between",
     alignItems:'center',
@@ -19,6 +21,7 @@ const useStyles = makeStyles({
 offers: {
     color: '#93c7ba',
     fontWeight: 'bolder',
+    fontFamily: 'Dancing Script',
 
 }
 ,navbarStyle :{
@@ -45,16 +48,13 @@ offers: {
           >
         OFFRES
           </Typography> 
-         
           <div className={classes.head}>
          <BasicSelect  cate={category}/>
          <SearchI  />
           <LocationDrop  />
           </div>
         </Toolbar>
-      </AppBar>
-
-  
+      </AppBar>  
     </Box>
   ); 
        

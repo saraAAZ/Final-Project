@@ -20,9 +20,7 @@ function App() {
         <Header />
         <Routes path="/" exact element={<MainPage />}>
           <Route path="/product" exact element={<Home />} />
-          <Route path="/slider" exact element={<Slider />} />
           <Route path="/" exact element={<MainPage />} />
-
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
         <Footer />

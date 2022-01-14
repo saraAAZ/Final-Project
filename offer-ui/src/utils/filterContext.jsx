@@ -34,7 +34,8 @@ export function FilterProvider(props)
    const cateFilter = (e) =>
    {
        const value = e.target.value;
-       dispatch({type:"catefilter",payload:value})
+       value != 'All'? dispatch({type:"catefilter",payload:value}) : dispatch({type:"LOAD_PRODUCTS",payload:product})
+       
    }
    const locFilter = (e) =>
    {

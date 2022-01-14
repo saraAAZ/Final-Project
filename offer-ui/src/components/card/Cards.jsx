@@ -12,7 +12,6 @@ import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import IconButton from '@mui/material/IconButton';
-let shoppingCartArr = [];
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -25,12 +24,18 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
+
 export default function MediaCard({info}) {
   const [expanded, setExpanded] = React.useState(false);
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-
+  const favClick = (event) => {
+    let i = info.attributes.fovproduct;
+    i = i+1;
+    console.log(info.attributes.fovproduct , i);
+  };
+  console.log(info.attributes.fovproduct);
   return (
     <Card sx={{ maxWidth: 345 }} className = "border-card">
       <CardContent className="card-style">
@@ -53,10 +58,10 @@ export default function MediaCard({info}) {
       info.attributes.groupQuantity>1 && info.attributes.groupPrice  ?
       <span>By with Group {info.attributes.groupQuantity} at {info.attributes.groupPrice}</span>:null
     }
-     
+
       </div>
       <CardActions className="choices-container">
-        <Button size="small"><FavoriteIcon style={{ color: '#c7ad9c' }}/></Button>
+        <Button size="small"><FavoriteIcon style={{ color: '#c7ad9c' }} onClick={favClick}/></Button>
          <Model info = {info}/>
          <ExpandMore
           expand={expanded}

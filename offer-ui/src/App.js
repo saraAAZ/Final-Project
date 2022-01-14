@@ -12,6 +12,7 @@ import Footer from "../src/components/footer/Footer";
 import Header from "../src/components/header/Header";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Slider from "./components/slider/Slider";
+import FavPro from "../../offer-ui/src/components/favProducts/FavPro.jsx"
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/product" exact element={<Home />} />
           <Route path="/" exact element={<MainPage />} />
           <Route path="*" element={<Navigate to="/" />} />
+          <Route path="/Favourute-product" exact element={<FavPro />} />
         </Routes>
         <Footer />
       </Router>

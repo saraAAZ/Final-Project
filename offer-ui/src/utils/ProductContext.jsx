@@ -1,6 +1,5 @@
-import React ,{useEffect,useReducer ,useState} from 'react'
+import React ,{useEffect,useReducer} from 'react'
 import reducer from '../reducer/productReducer'
-import axios from 'axios'
 const initialState = {
    
     products_loading: false,

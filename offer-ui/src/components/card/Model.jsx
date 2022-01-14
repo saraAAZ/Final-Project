@@ -25,14 +25,14 @@ export default function BasicModal({info}) {
   let pri =totalPrice/ info.attributes.groupQuantity ;
   const [open, setOpen] = React.useState(false);
   const [diable, setable] = React.useState(false);
-  const [disable, setdisable] = React.useState(false);
+  const [disable] = React.useState(false);
   const [groupPrice, setGroupPrice] = React.useState(totalPrice);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   let [amount, setAmount] = React.useState(info.attributes.groupQuantity);
   function increace (quantity) {
     
-    if(quantity == amount){
+    if(quantity === amount){
         setable(true);
     }else{
         let inc = amount+1;

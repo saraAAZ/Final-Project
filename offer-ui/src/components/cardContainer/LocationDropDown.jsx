@@ -16,12 +16,17 @@ export default function BasicSelect({city}) {
     
   };
  
-    // console.log(mySet1);
+   
   return (
-    <Box sx={{ minWidth: 120 }}>
+    <Box  style={{ 
+      paddingRight: '20%',
+    }} sx={{ minWidth: 120 }}>
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">Location</InputLabel>
         <Select
+        style={{ 
+         border:'solid 1px #93c7ba'
+        }}
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           value={location}

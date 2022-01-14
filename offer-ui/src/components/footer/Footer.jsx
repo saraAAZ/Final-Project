@@ -109,7 +109,8 @@ const Payment = styled.img`
 
 const Footer = () => {
   return (
-    <Container>
+    <Container style={{ borderTop: 'solid 1px #93c7ba',
+  }} >
       <Left>
         <Logo>Offers</Logo>
         <Desc>

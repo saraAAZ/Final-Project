@@ -18,9 +18,7 @@ export default function BasicSelect({city}) {
  
    
   return (
-    <Box  style={{ 
-      paddingRight: '20%',
-    }} sx={{ minWidth: 120 }}>
+    <Box   sx={{ minWidth: 120 }}>
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">Location</InputLabel>
         <Select

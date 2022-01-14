@@ -39,7 +39,9 @@ export default function BasicTextFields() {
   };
     return (
     <Box
-    style={{ paddingRight: '20%'}}
+    style={{ paddingRight: '20%',
+    paddingLeft: '20%'
+  }}
    
       component="form"
       sx={{

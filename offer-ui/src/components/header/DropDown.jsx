@@ -17,7 +17,7 @@ export default function BasicSelect({cate}) {
       context.cateFilter(event)
   };
   return (
-    <Box  style={{ paddingRight: '20%'}} sx={{ minWidth: 120 }}>
+    <Box  sx={{ minWidth: 120 }}>
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">Category</InputLabel>
         <Select

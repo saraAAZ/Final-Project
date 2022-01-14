@@ -23,7 +23,7 @@
          
           temProduct = temProduct.filter(product => 
             {
-             return product.attributes.name.startsWith(action.payload) })
+             return product.attributes.name.includes(action.payload) })
         }
        
         return {...state ,filtered_products:temProduct}

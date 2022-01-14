@@ -1,12 +1,13 @@
-import React ,{useEffect,useReducer ,useState} from 'react'
+import React ,{useEffect,useReducer} from 'react'
 import reducer from '../reducer/productReducer'
-import axios from 'axios'
 const initialState = {
    
     products_loading: false,
     products_error: false,
     product: [],
     category:[],
+    favProduct:[],
+
     
     
   }
@@ -22,13 +23,18 @@ export function ProductProvider(props) {
             const response = await fetch("https://apimena.herokuapp.com/api/products?populate=*")
             const data= await response.json()
             dispatch({type:"GET_PRODUCT_SUCCESS",payload:data})
+            
             }
             catch(erroe)
             { 
                 dispatch({type:"GET_PRODUCT_ERROR"})
             }
+            
         } 
-       
+    //    data.forEach(element => {
+           
+    //    });
+    
         const fetchCategory =
        async () => {
         dispatch({type:"GET_PRODUCT_BIGIN"})
@@ -44,6 +50,8 @@ export function ProductProvider(props) {
                 dispatch({type:"GET_PRODUCT_ERROR"})
             }
         } 
+
+       
        
     
     useEffect(() => {
@@ -53,7 +61,11 @@ export function ProductProvider(props) {
       useEffect(() => {
         fetchCategory()
       },[])
+    //   useEffect(() => {
+    //     fetchFav()
+    //   },[])
       
+        
     
     
     

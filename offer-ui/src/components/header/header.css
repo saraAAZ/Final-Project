@@ -8,7 +8,7 @@
     background-color:#93c7ba;
 }
 .offers{
-    font-size: 25px;
+    font-size: 25;
     font-family: 'Dancing Script', cursive;
     color: whitesmoke;
     font-weight: bolder;
@@ -16,6 +16,7 @@
 }
 .navbar-style{
     display: flex;
+    
     justify-content: space-between;
 }
 .dropDown{

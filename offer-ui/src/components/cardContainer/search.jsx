@@ -1,4 +1,4 @@
-import React ,{useState,useContext} from 'react'
+import React ,{useContext} from 'react'
 import Box from '@mui/material/Box';
 import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
@@ -33,13 +33,14 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
 
 export default function BasicTextFields() {
   const context = useContext(FilterContext);
-   const [searchData, setData] = useState("");
    const handleChange = (event) => {
       context.searchFilter(event)
    
   };
     return (
     <Box
+    style={{ paddingRight: '20%'}}
+   
       component="form"
       sx={{
         '& > :not(style)': { m: 1, width: '25ch' },
@@ -47,7 +48,10 @@ export default function BasicTextFields() {
       noValidate
       autoComplete="off"
     >
-          <TextField id="outlined-basic" label="Search .." variant="outlined" onChange={handleChange} >
+          <TextField 
+           style={{ 
+      border:'solid 1px #93c7ba'
+     }} id="outlined-basic" label="Search .." variant="outlined" onChange={handleChange} >
           <SearchIcon/>
           </TextField>
     </Box>

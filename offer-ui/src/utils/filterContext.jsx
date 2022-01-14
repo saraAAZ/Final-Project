@@ -1,4 +1,4 @@
-import React ,{ useState,useContext,useReducer,useEffect} from 'react'
+import React ,{ useContext,useReducer,useEffect} from 'react'
 import {ProductContext}  from './ProductContext'
 import  reducer from '../reducer/filterReducer'
 const initalState = {

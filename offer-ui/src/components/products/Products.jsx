@@ -1,17 +1,16 @@
 import React,{useContext} from 'react';
 import CardContainer from '../cardContainer/CardContainer';
-import SearchI from '../cardContainer/search';
-import LocationDrop from '../cardContainer/LocationDropDown';
 import Box from '@mui/material/Box';
-import BasicSelect from '../header/DropDown.jsx';
 import Grid from '@mui/material/Grid';
 import {FilterContext} from '../../utils/filterContext';
 import {ProductContext} from '../../utils/ProductContext';
+import { makeStyles } from '@material-ui/core/styles';
+const useStyles = makeStyles({
 
-
+});
 
 export default function ProductsContainer () {
-
+  const classes = useStyles(); 
   const context = useContext(FilterContext)
  
   const {products_loading,category} = useContext(ProductContext);
@@ -24,12 +23,12 @@ export default function ProductsContainer () {
     
       return(
       
-        <Box>
+        <Box className={classes.container}> 
         <Grid  container spacing={{ xs: 1, md: 2 }} columns={{ xs: 4, sm: 8, md: 12 }}>    
-         <BasicSelect  cate={category}/>
-         <SearchI />
-          <LocationDrop />
-          <CardContainer products={context.filtered_products}/>   
+      
+          <CardContainer 
+         
+          products={context.filtered_products}  />   
               
     </Grid>
        </Box>
